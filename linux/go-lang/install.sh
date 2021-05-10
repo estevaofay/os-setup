@@ -21,3 +21,6 @@ fi
 
 # Check go version
 go version
+
+# Install Delve (Golang debugger)
+go install github.com/go-delve/delve/cmd/dlv@latest
