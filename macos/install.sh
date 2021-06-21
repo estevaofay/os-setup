@@ -25,3 +25,5 @@
 # python virtual environment https://opensource.com/article/19/6/python-virtual-environments-mac
 #postman
 # apktool
+# flutter
+# okteto-cli
