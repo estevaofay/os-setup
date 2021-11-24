@@ -19,3 +19,4 @@ alias fp="fzf -m --preview 'batcat --style=numbers --color=always {} | head -500
 # git
 alias gst='git status'
 alias ga='git add'
+alias gpush='git push'
