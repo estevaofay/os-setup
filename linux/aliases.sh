@@ -1,0 +1,1 @@
+ln -s ~/Documents/git/xFayre/os-setup/linux/aliases/ .aliases
