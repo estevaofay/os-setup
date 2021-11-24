@@ -1,0 +1,16 @@
+#!/bin/bash
+FILE_PATH="${1}"
+COMMAND="${2}"
+
+open_with_vscode() {
+  FILE="${1}"
+  echo "${FILE}"
+  code "${FILE}" &> /dev/null
+  exit 0
+}
+
+if [ -n "${FILE_PATH}" ] && [ -e "${FILE_PATH}" ]; then
+  open_with_vscode "${FILE_PATH}"
+else
+  open_with_vscode "$(fdfind | fzf)"
+fi
