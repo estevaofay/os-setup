@@ -4,12 +4,12 @@ POD_NAME="${1}"
 CLUSTER="${2}"
 NAMESPACE="${3}"
 
-if [ -z "${CLUSTER?}"]; then
+if [ -z "${CLUSTER?}" ]; then
   echo "[INFO] Choose k8s cluster..."
   CLUSTER=$(kubectl config get-contexts | sed '1d' | awk '{ print $2 }' | sort | fzf)
 fi
 
-if [ -z "${NAMESPACE?}"]; then
+if [ -z "${NAMESPACE?}" ]; then
   echo "[INFO] Choose Namespace..."
   NAMESPACE=$(kubectl get namespaces --context ${CLUSTER} | sed '1d' | awk '{ print $1 }' | fzf)
 fi
@@ -18,5 +18,5 @@ echo "[INFO] Choose Pod..."
 POD_NAME=$(kubectl get pod --context ${CLUSTER} --namespace ${NAMESPACE} | sed '1d' | awk '{ print $1 }' | grep -E "${POD_NAME}" | fzf)
 
 echo "[INFO] Choose ENV VAR..."
-ENV_VAR=$(kubectl exec $POD_NAME --context ${CLUSTER} --namespace ${NAMESPACE} -- env | fzf)
+ENV_VAR=$(kubectl exec ${POD_NAME} --context ${CLUSTER} --namespace ${NAMESPACE} -- /bin/sh -c '(find /vault -type f | xargs -n 1 'cat'); env' | fzf)
 echo "ENV_VAR.....: $ENV_VAR"
