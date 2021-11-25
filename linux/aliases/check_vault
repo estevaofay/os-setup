@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "[INFO] Choose k8s cluster..."
+kubectl ctx
+echo "[INFO] Choose Namespace..."
+kubectl ns
+echo "[INFO] Choose Pod..."
+POD_NAME=$(kubectl get pod | awk '{ print $1 }' | fzf)
+echo "[INFO] Checking Pod $POD_NAME"
+echo "[INFO] Choose ENV VAR..."
+ENV_VAR=$(kubectl exec $POD_NAME -- env | fzf)
+echo "ENV_VAR.....: $ENV_VAR"
