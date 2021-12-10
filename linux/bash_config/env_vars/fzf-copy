@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# test
+export VAR_TEST="dunha"
+

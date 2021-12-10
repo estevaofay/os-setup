@@ -15,4 +15,4 @@ kubectl krew install \
   ns \
   neat
 
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH" >> ~/.bashrc 
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH" >> ~/.bashrc

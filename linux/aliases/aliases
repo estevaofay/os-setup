@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# azure
+alias az-alias="echo azure-service-account-login-sandbox; echo azure-service-account-login-nonprod; echo azure-service-account-login-prod"
+alias azure-service-account-login-sandbox="az login --service-principal -u ea1d327f-ec1e-461b-be4f-e8f7d059862b -p 'rI41GE_2ajRKDTT~a7x6s.e.vrklNR-~tF' --tenant cef04b19-7776-4a94-b89b-375c77a8f936"
+alias azure-service-account-login-nonprod="az login --service-principal -u 07f4fc0a-bb45-41a2-bcde-4e1de7f59679 -p 'ge4n3Rnhf66h-E_1eOL749ul6EBjhq_7g_' --tenant cef04b19-7776-4a94-b89b-375c77a8f936"
+alias azure-service-account-login-prod="az login --service-principal -u 303be64d-d1ca-45b4-8e5d-492f20b840b1 -p 'JedTml0Ypz0w6m5O0Hz7_gX..4a.Zquhhy' --tenant cef04b19-7776-4a94-b89b-375c77a8f936"
+
+# clip
+alias clip='xclip -sel clip'
+
+# fd-find
+alias fd='fdfind'
+alias fp="fzf -m --preview 'batcat --style=numbers --color=always {} | head -500'"
+
+# git
+alias gst='git status'
+alias ga='git add'
+alias gpush='git push'
+
+# kiali
+alias kiali="${HOME}/Documents/git/linux/scripts/utilities/kiali/kiali.sh"
+
+# kubernetes
+alias k='kubectl'
