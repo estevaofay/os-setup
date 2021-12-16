@@ -1,2 +1,3 @@
 #!/bin/bash
-npm install -g commitizen
+sudo pip3 install -U Commitizen
+
