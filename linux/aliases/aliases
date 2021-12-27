@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 # clip
 alias clip='xclip -sel clip'
 
